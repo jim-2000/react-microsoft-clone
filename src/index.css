@@ -1,13 +1,152 @@
-body {
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+  width: 1em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rotate_img img {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.blurImg img {
+  -webkit-filter: blur(3px);
+  filter: blur(2px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.blurImg img:hover {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+.pulse {
+  animation-name: pulse infinite 20s linear;
+  /* animation-duration: 1s; */
+}
+
+/**/
+.mt_25 {
+  margin-top: 25px;
+}
+
+.logo img {
+  width: 180px;
+}
+header {
+  background-color: rgb(255, 255, 255);
+}
+/* section1 */
+.newSection_Img img {
+  width: 600px;
+  max-width: 100%;
+}
+
+.hero_img img {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  /*  heor section */
+  .hero {
+    background: url("images/homepage/hero_1600.png") no-repeat center/cover;
+    height: 500px;
+  }
+  .hero_img {
+    display: none;
+  }
+  .hero .overlay {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .hero .overlay .txt {
+    width: 300px;
+  }
+  /* gamepass section  */
+  .gamepass_hero {
+    background: url("images/homepage/game_pass_1600.png") no-repeat center/cover;
+    height: 500px;
+  }
+  .gamepass_hero .overlay {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .gamepass_hero .overlay .txt {
+    width: 300px;
+  }
+
+  /* This holiday */
+  .holiday_sec {
+    background: url("./images/homepage/this_holiday_1600.png") no-repeat
+      center/cover;
+    width: 100%;
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; */
+  }
+  .holiday_sec .overlay {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .holiday_sec .overlay .txt {
+    width: 300px;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero .overlay .txt {
+    width: 500px;
+  }
+  .gamepass_hero .overlay .txt {
+    width: 500px;
+  }
+  .holiday_sec .overlay .txt {
+    width: 500px;
+  }
+}
+
+/* css animation  */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+  40% {
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+  60% {
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
