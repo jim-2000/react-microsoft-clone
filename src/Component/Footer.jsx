@@ -50,7 +50,9 @@ const Footer = () => {
                     <li className="mr-4">Terms of Use</li>
                     <li className="mr-4">Trademarks</li>
                     <li className="mr-4">Safety &amp; eco</li>
-                    <li className="mr-4">About our ads</li>
+                    <li className="mr-4 text-red-400">
+                        <a href="https://github.com/jim-2000"> Developer</a>
+                    </li>
                     <li>&copy; Microsoft 2020</li>
                 </ul>
                 </div>
